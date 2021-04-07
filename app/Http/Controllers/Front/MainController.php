@@ -226,7 +226,7 @@ class MainController extends Controller
         if($request->payment_method == 'cod'){
             $orders=Order::create([
                 'user_id'=>auth()->user()->id,
-                'status_code'=>mt_rand(1000000,999999),
+                'status_code'=>mt_rand(100000,999999),
                 'total_price'=>$request->total
             ]);
             $orders->products()->attach($request->products);
@@ -262,7 +262,7 @@ class MainController extends Controller
         $orders=Order::create([
             'user_id'=>auth()->user()->id,
             'total_price'=>$request->total,
-            'status_code'=>mt_rand(1000000,999999),
+            'status_code'=>mt_rand(100000,999999),
             'bank_transaction_id'=>$request->id_payment
         ]);
         $orders->products()->attach($request->products);

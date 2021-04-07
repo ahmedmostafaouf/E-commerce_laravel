@@ -84,7 +84,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::y32B4xNCJyeh0dbq',
+            '_route' => 'generated::P6AhJwuJZm0jOTYb',
           ),
           1 => NULL,
           2 => 
@@ -969,6 +969,143 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports/order/today' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.today',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports/delivery/today' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'delivery.today',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports/this/month' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'this.month',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports/order/search' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.search',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports/order/search/byYear' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'search.year',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports/order/search/byMonth' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'search.month',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/reports/order/search/byDay' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'search.day',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -2062,7 +2199,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::y32B4xNCJyeh0dbq' => 
+    'generated::P6AhJwuJZm0jOTYb' => 
     array (
       'methods' => 
       array (
@@ -2077,15 +2214,15 @@ app('router')->setCompiledRoutes(
           0 => 'api',
           1 => 'auth:api',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":289:{@teOrsfn1VYkN+sgSMkfTG/U9OzbRtXNu7JcWpx3YO9U=.a:5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":289:{@Mmbu2JH/pI+YgFuMt5CwASgQEa8YDnnSSFRZfiJJPM0=.a:5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000006570d4b7000000001bd99fdf";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003a6ef8b900000000540efe14";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::y32B4xNCJyeh0dbq',
+        'as' => 'generated::P6AhJwuJZm0jOTYb',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2114,10 +2251,10 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":325:{@RZ30/eQ8dj+ku00mJJrvYrDEiCTVLP1ynI0SnyO5qXY=.a:5:{s:3:"use";a:0:{}s:8:"function";s:112:"function (){
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":325:{@48jUeL9I6ZIV0mUCIqpDojRuD+jz4cf5Qi086gKU4YE=.a:5:{s:3:"use";a:0:{}s:8:"function";s:112:"function (){
     \\Illuminate\\Support\\Facades\\Auth::logout();
     return \\redirect()->route(\'get.front.login\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000006570d4b5000000001bd99fdf";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003a6ef8bb00000000540efe14";}}',
         'namespace' => NULL,
         'prefix' => NULL,
         'where' => 
@@ -3465,10 +3602,10 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":302:{@uRUQk80IGlqUeglF6wTDdlLgz28A244kPhgj5ueKE5Y=.a:5:{s:3:"use";a:0:{}s:8:"function";s:90:"function (){
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":302:{@8Wat2HcsMHzlWh6CV4F6z2SAMo6Reom2WJopzuUcgd8=.a:5:{s:3:"use";a:0:{}s:8:"function";s:90:"function (){
   \\auth(\'admin\')->logout();
     return \\redirect()->route(\'getAdminLogin\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000006570db5c000000001bd99fdf";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003a6ef75200000000540efe14";}}',
         'namespace' => NULL,
         'prefix' => 'admin',
         'where' => 
@@ -4982,6 +5119,262 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'order.cancel',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'order.today' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/reports/order/today',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportController@order_today',
+        'controller' => 'App\\Http\\Controllers\\ReportController@order_today',
+        'namespace' => NULL,
+        'prefix' => 'admin/reports',
+        'where' => 
+        array (
+        ),
+        'as' => 'order.today',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'delivery.today' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/reports/delivery/today',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportController@delivery_today',
+        'controller' => 'App\\Http\\Controllers\\ReportController@delivery_today',
+        'namespace' => NULL,
+        'prefix' => 'admin/reports',
+        'where' => 
+        array (
+        ),
+        'as' => 'delivery.today',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'this.month' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/reports/this/month',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportController@this_month',
+        'controller' => 'App\\Http\\Controllers\\ReportController@this_month',
+        'namespace' => NULL,
+        'prefix' => 'admin/reports',
+        'where' => 
+        array (
+        ),
+        'as' => 'this.month',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'order.search' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/reports/order/search',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportController@order_search',
+        'controller' => 'App\\Http\\Controllers\\ReportController@order_search',
+        'namespace' => NULL,
+        'prefix' => 'admin/reports',
+        'where' => 
+        array (
+        ),
+        'as' => 'order.search',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'search.year' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/reports/order/search/byYear',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportController@search_by_year',
+        'controller' => 'App\\Http\\Controllers\\ReportController@search_by_year',
+        'namespace' => NULL,
+        'prefix' => 'admin/reports',
+        'where' => 
+        array (
+        ),
+        'as' => 'search.year',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'search.month' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/reports/order/search/byMonth',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportController@search_by_month',
+        'controller' => 'App\\Http\\Controllers\\ReportController@search_by_month',
+        'namespace' => NULL,
+        'prefix' => 'admin/reports',
+        'where' => 
+        array (
+        ),
+        'as' => 'search.month',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'search.day' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/reports/order/search/byDay',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ReportController@search_by_day',
+        'controller' => 'App\\Http\\Controllers\\ReportController@search_by_day',
+        'namespace' => NULL,
+        'prefix' => 'admin/reports',
+        'where' => 
+        array (
+        ),
+        'as' => 'search.day',
       ),
       'fallback' => false,
       'defaults' => 

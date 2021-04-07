@@ -47,12 +47,13 @@
                 @yield('content')
 
 
-                @include('admin.includes.footer')
 
                 <!-- Back-to-top -->
                 <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
             </div>
         </div>
+        @include('admin.includes.footer')
+
         <!-- JQuery min js -->
         <script src="{{URL::asset('assets/plugins/jquery/jquery.min.js')}}"></script>
         <!-- Bootstrap Bundle js -->

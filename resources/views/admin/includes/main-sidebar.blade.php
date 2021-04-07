@@ -103,6 +103,22 @@
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M6.26 9L12 13.47 17.74 9 12 4.53z" opacity=".3"/>
+                        <path
+                            d="M19.37 12.8l-7.38 5.74-7.37-5.73L3 14.07l9 7 9-7zM12 2L3 9l1.63 1.27L12 16l7.36-5.73L21 9l-9-7zm0 11.47L6.26 9 12 4.53 17.74 9 12 13.47z"/>
+                    </svg>
+                    <span class="side-menu__label">Reports</span><i class="angle fe fe-chevron-down"></i></a>
+                <ul class="slide-menu">
+                    <li><a class="slide-item" href="{{ route('order.today') }}"> Orders Today</a></li>
+                    <li><a class="slide-item" href="{{ route('delivery.today') }}"> Delivery Today</a></li>
+                    <li><a class="slide-item" href="{{ route('this.month') }}"> This Month</a></li>
+                    <li><a class="slide-item" href="{{ route('order.search') }}"> Search</a></li>
+                </ul>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0z" fill="none"/>
                         <path
                             d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8c.28 0 .5-.22.5-.5 0-.16-.08-.28-.14-.35-.41-.46-.63-1.05-.63-1.65 0-1.38 1.12-2.5 2.5-2.5H16c2.21 0 4-1.79 4-4 0-3.86-3.59-7-8-7zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 10 6.5 10s1.5.67 1.5 1.5S7.33 13 6.5 13zm3-4C8.67 9 8 8.33 8 7.5S8.67 6 9.5 6s1.5.67 1.5 1.5S10.33 9 9.5 9zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 6 14.5 6s1.5.67 1.5 1.5S15.33 9 14.5 9zm4.5 2.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"

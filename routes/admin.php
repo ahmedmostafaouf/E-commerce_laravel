@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -101,6 +102,17 @@ Route::group(['prefix'=>'orders','middleware'=>'auth:admin'],function () {
 
     Route::get('/view/order/payments/success',[OrderController::class,'success_payment'])->name('order.success');
     Route::get('/view/order/payments/cancel',[OrderController::class,'cancel_payment'])->name('order.cancel');
+});
 
 
+///////////////////////// Reports ///////////////////////////////////////
+
+Route::group(['prefix'=>'reports','middleware'=>'auth:admin'],function () {
+    Route::get('/order/today',[ReportController::class,'order_today'])->name('order.today');
+    Route::get('/delivery/today',[ReportController::class,'delivery_today'])->name('delivery.today');
+    Route::get('/this/month',[ReportController::class,'this_month'])->name('this.month');
+    Route::get('/order/search',[ReportController::class,'order_search'])->name('order.search');
+    Route::post('/order/search/byYear',[ReportController::class,'search_by_year'])->name('search.year');
+    Route::post('/order/search/byMonth',[ReportController::class,'search_by_month'])->name('search.month');
+    Route::post('/order/search/byDay',[ReportController::class,'search_by_day'])->name('search.day');
 });
