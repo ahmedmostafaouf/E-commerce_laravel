@@ -103,17 +103,17 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item active"><a class="nav-link" href="{{route('get.home')}}">Home</a></li>
-                    @auth
+
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
                             <li><a href="{{route('cart.show')}}">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="{{route('get.account')}}">My Account</a></li>
+                            @auth <li><a href="checkout.html">Checkout</a></li> @endauth
+                            @auth <li><a href="{{route('get.account')}}">My Account</a></li> @endauth
                             <li><a href="{{route('get.cat')}}">Shop Detail</a></li>
                         </ul>
                     </li>
-                    @endauth
+
                     <li class="nav-item"><a class="nav-link" href="{{route('get.services')}}">Our Service</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('get.contact')}}">Contact Us</a></li>
                 </ul>
@@ -128,11 +128,12 @@
 
                     <li class="side-" ><a href="{{ route('wishlist.show') }}">
                             <i class="fa fa-heart"></i>
-                            <span class="badge">{{ DB::table('product_user')->count() }}</span>
+                            <span class="badge">{{ DB::table('product_user')->where('user_id',auth()->user()->id)->count() }}</span>
                         </a></li>
+                    @endauth
                         <li class="side-menu"><a href="#">
                             <i class="fa fa-shopping-bag"></i>
-                            <span class="badge">@inject('carts','App\Models\Cart') {{$carts->where('user_id',auth()->user()->id)->count()}}</span>
+                            <span class="badge">@inject('carts','App\Models\Cart') {{$carts->where('session_id',\Illuminate\Support\Facades\Session::get('session_id'))->count()}}</span>
                         </a></li>
                 </ul>
             </div>
@@ -146,7 +147,7 @@
                 <ul class="cart-list">
 
                     @inject('carts','App\Models\Cart')
-                    @foreach($carts->where('user_id',auth()->user()->id)->get()  as $cart)
+                    @foreach($carts->where('session_id',\Illuminate\Support\Facades\Session::get('session_id'))->get()  as $cart)
 
                         <li>
                         <a href="#" class="photo"><img src="{{$cart->product->image}}" class="cart-thumb" alt="" /></a>
@@ -161,7 +162,7 @@
             <a class="btn hvr-hover" href="{{route('cart.show')}}"> Vest Cart</a>
         </div>
         <!-- End Side Menu -->
-            @endauth
+
     </nav>
     <!-- End Navigation -->
 </header>

@@ -15,10 +15,17 @@ class Products extends Model implements HasMedia
         'image',
         'description',
         'category_id',
+        'subCategory_id',
         'purchase_price',
         'sale_price',
         'stock',// the number in the store
-        'subCategory_id',
+
+        'discount',
+        'hot_new',
+        'best_rated',
+        'trend_product',
+        'slider_discount',
+        'status'
 
     ];
     public function sub_categroy(){

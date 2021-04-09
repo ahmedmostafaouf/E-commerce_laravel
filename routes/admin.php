@@ -105,7 +105,7 @@ Route::group(['prefix'=>'orders','middleware'=>'auth:admin'],function () {
 });
 
 
-///////////////////////// Reports ///////////////////////////////////////
+///////////////////////// Reports ////////////////////////////////////////////
 
 Route::group(['prefix'=>'reports','middleware'=>'auth:admin'],function () {
     Route::get('/order/today',[ReportController::class,'order_today'])->name('order.today');
@@ -116,3 +116,5 @@ Route::group(['prefix'=>'reports','middleware'=>'auth:admin'],function () {
     Route::post('/order/search/byMonth',[ReportController::class,'search_by_month'])->name('search.month');
     Route::post('/order/search/byDay',[ReportController::class,'search_by_day'])->name('search.day');
 });
+
+///////////////////////////////////Coupon & newsletter////////////////////////////////

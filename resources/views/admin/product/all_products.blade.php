@@ -128,6 +128,19 @@
                         </div>
                         <div class="form-group">
                             <div class="row">
+                                <div class="col-12">
+                                    <label for="exampleInputEmail1">Discount</label>
+                                    <input type="number" class="form-control" name="discount"
+                                           placeholder="Discount">
+                                    @error("discount")
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
                                 <div class="col-6">
                                     <label for="exampleInputEmail1">Category</label>
                                     <select type="text" class="form-control" id="category_name" name="category_id">
@@ -142,14 +155,14 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="exampleInputEmail1">Sub Category</label>
-                                    <select type="text" class="form-control" id="category_name" name="sub_category_id">
+                                    <select type="text" class="form-control" id="sub_category_name" name="subCategory_id">
                                         <option value="" selected disabled> Get Sub Category</option>
                                         @foreach($subCats as $subCat)
                                             <option value="{{$subCat->id}}">{{$subCat->name}} </option>
                                         @endforeach
 
                                     </select>
-                                    @error("sub_category_id")
+                                    @error("subCategory_id")
                                     <span class="text-danger">{{$message}} </span>
                                     @enderror
                                 </div>
@@ -175,6 +188,7 @@
                             </div>
 
                         </div>
+
 
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-success">Add It !!</button>

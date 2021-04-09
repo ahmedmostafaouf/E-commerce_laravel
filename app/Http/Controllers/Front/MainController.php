@@ -15,6 +15,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
+
 
 class MainController extends Controller
 {
@@ -49,12 +52,19 @@ class MainController extends Controller
 
     public function AddCart(Request $request, $id)
     {
+
         $product = Products::findOrFail($id);
         if ($product) {
+            $session_id=Session::get('session_id');
+            if(empty($session_id)){
+                 $session_id=Str::random(40);
+                Session::put('session_id',$session_id);
+            }
             $carts = Cart::create([
                 'quantity' => $request->quantity,
                 'user_id' => $request->user_id,
-                'product_id' => $request->product_id
+                'product_id' => $request->product_id,
+                'session_id'=>$session_id
             ]);
             $product->update(['stock' => $product->stock - $request->quantity]);
             return redirect()->route('cart.show');
@@ -98,12 +108,13 @@ class MainController extends Controller
 
     public function geCartPage()
     {
-        $carts = Cart::all();
+        $session_id=Session::get('session_id');
+        $carts = Cart::where('session_id',$session_id)->get();
         return view('webSite.cart', compact('carts'));
     }
 
 
-    public function deleteOrder($id)
+   /* public function deleteOrder($id)
     {
         $orders = Order::with('products')->find($id);
         foreach ($orders->products as $product) {
@@ -113,7 +124,7 @@ class MainController extends Controller
         }
         $orders->delete();
         return redirect()->route('cart.show')->with(['success' => 'Remove Success']);
-    }
+    }*/
     public function getServices()
     {
         return view('webSite.services');

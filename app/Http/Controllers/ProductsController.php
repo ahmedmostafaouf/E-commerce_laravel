@@ -81,6 +81,31 @@ class ProductsController extends Controller
         return view('admin.product.all_products',get_defined_vars());
     }
     public function storeProduct(ProductReq $request){
+        if (!$request->has('status')) {
+            $request->request->add(['status' => 0]);
+        } else {
+            $request->request->add(['status' => 1]);
+        }
+        if (!$request->has('hot_new')) {
+            $request->request->add(['hot_new' => 0]);
+        } else {
+            $request->request->add(['hot_new' => 1]);
+        }
+        if (!$request->has('best_rated')) {
+            $request->request->add(['best_rated' => 0]);
+        } else {
+            $request->request->add(['best_rated' => 1]);
+        }
+        if (!$request->has('trend_product')) {
+            $request->request->add(['trend_product' => 0]);
+        } else {
+            $request->request->add(['trend_product' => 1]);
+        }
+        if (!$request->has('slider_discount')) {
+            $request->request->add(['slider_discount' => 0]);
+        } else {
+            $request->request->add(['slider_discount' => 1]);
+        }
         $product = Products::create($request->all());
         !$request->hasFile("photo") ?: $product->addMediaFromRequest('photo')->toMediaCollection('photos');
         return redirect()->route('all.product');

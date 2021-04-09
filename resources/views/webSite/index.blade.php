@@ -127,7 +127,7 @@
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="{{route('details.page',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{{ route('toggle-favourite',$product->id) }}" data-toggle="tooltip" data-placement="right" title="Favoriets"> @if(DB::table('product_user')->where('product_id',$product->id)->first())<i class="fas fa-heart"></i>@else <i class="far fa-heart"></i> @endif</a></li>
+                                   @auth <li><a href="{{ route('toggle-favourite',$product->id) }}" data-toggle="tooltip" data-placement="right" title="Favoriets"> @if(DB::table('product_user')->where('product_id',$product->id)->where('user_id',auth()->user()->id)->first())<i class="fas fa-heart"></i>@else <i class="far fa-heart"></i> @endif</a></li> @endauth
 
                                 </ul>
                                 <a class="cart" href="{{route('details.page',$product->id)}}" >Add to Cart</a>

@@ -17,7 +17,8 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->integer('quantity')->default('1');
             $table->integer('product_id')->unsigned();
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
+            $table->string('session_id')->nullable();
             $table ->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });

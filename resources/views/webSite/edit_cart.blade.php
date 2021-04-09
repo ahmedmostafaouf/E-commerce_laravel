@@ -66,7 +66,8 @@
                 @csrf
                 <input type="hidden" value="{{$carts->product->id}}" name="product_id">
                 <input type="hidden" value="{{$carts->product->id}}" name="order_id">
-                <input type="hidden" value="{{auth()->user()->id}}" name="user_id">
+                <input type="hidden" value="{{$carts->user_id}}"   name="user_id">
+                <input type="hidden" value="{{$carts->session_id}}" name="session_id">
                 <input type="hidden" value="{{$carts->product->name}}" name="product_name">
                 <input type="hidden" value="{{$carts->product->stock}}" name="stock">
                 <input type="hidden" value="{{$carts->product->sale_price}}" name="sale_price">

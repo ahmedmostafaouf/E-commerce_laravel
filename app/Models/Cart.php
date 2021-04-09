@@ -14,6 +14,7 @@ class Cart extends Model implements HasMedia
         'quantity',
         'product_id',
         'user_id',
+        'session_id',
     ];
     public function product(){
         return $this->belongsTo('App\Models\Products','product_id');

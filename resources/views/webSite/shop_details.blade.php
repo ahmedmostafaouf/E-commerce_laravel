@@ -53,7 +53,7 @@
             <form method="POST" action="{{route('Add.carts',$products->id)}}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" value="{{$products->id}}" name="product_id">
-                <input type="hidden" value="{{auth()->user()->id}}" name="user_id">
+\Illuminate\Support\Facades\Session::get('session_id')                \Illuminate\Support\Facades\Session::get('session_id')
                 <input type="hidden" value="{{$products->name}}" name="product_name">
                 <input type="hidden" value="{{$products->stock}}" name="stock">
                 <input type="hidden" value="{{$products->sale_price}}" name="sale_price">
