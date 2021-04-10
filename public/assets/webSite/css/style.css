@@ -2384,6 +2384,34 @@
      white-space: nowrap;
 }
 
+/*********************************
+6. Recently Viewed
+*********************************/
+
+.viewed
+{
+    padding-top: 51px;
+    padding-bottom: 60px;
+    background: #e2e2e257;
+    border-radius: 40px;
+    box-shadow: #0b0b0b ;
+}
+.viewed_title_container
+{
+    border-bottom: solid 1px #dadada;
+}
+.viewed_title
+{
+    margin-bottom: 14px;
+}
+
+
+
+
+
+
+
+
 
 
 

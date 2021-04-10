@@ -11,7 +11,8 @@
 @section('content')
     @include('admin.includes.breadcrumb',['title'=>'Product','var'=>'Show All Products','link'=>'
 '])
-    <a href="{{route("product-create",[$id])}}" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-document-add"></i>Add New Product</a>
+    <a href="{{route("product-create",[$id])}}" class="btn btn-success btn-with-icon"><i class="typcn typcn-document-add"></i>Add New Product</a>
+    <br>
     <!-- row opened -->
     <div class="row row-sm">
         <!--div-->

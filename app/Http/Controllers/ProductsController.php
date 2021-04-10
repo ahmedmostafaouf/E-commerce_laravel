@@ -28,11 +28,36 @@ class ProductsController extends Controller
 
     public function store(ProductReq $request,$id)
     {
+        if (!$request->has('status')) {
+            $request->request->add(['status' => 0]);
+        } else {
+            $request->request->add(['status' => 1]);
+        }
+        if (!$request->has('hot_new')) {
+            $request->request->add(['hot_new' => 0]);
+        } else {
+            $request->request->add(['hot_new' => 1]);
+        }
+        if (!$request->has('best_rated')) {
+            $request->request->add(['best_rated' => 0]);
+        } else {
+            $request->request->add(['best_rated' => 1]);
+        }
+        if (!$request->has('trend_product')) {
+            $request->request->add(['trend_product' => 0]);
+        } else {
+            $request->request->add(['trend_product' => 1]);
+        }
+        if (!$request->has('slider_discount')) {
+            $request->request->add(['slider_discount' => 0]);
+        } else {
+            $request->request->add(['slider_discount' => 1]);
+        }
         $subcategory = SubCategory::findOrFail($id);
-        $category_id = $subcategory->category['id'];
+        $category_id = $subcategory->category->id;
         $request_data=$request->except(['category_id','subCategory_id']);
         $request_data['category_id']=$category_id;
-        $request_data['subCategory_id']=$subcategory;
+        $request_data['subCategory_id']=$subcategory->id;
         $product = Products::create($request_data);
         !$request->hasFile("photo") ?: $product->addMediaFromRequest('photo')->toMediaCollection('photos');
 
@@ -56,6 +81,31 @@ class ProductsController extends Controller
 
     public function update(ProductReq $request, $id)
     {
+        if (!$request->has('status')) {
+            $request->request->add(['status' => 0]);
+        } else {
+            $request->request->add(['status' => 1]);
+        }
+        if (!$request->has('hot_new')) {
+            $request->request->add(['hot_new' => 0]);
+        } else {
+            $request->request->add(['hot_new' => 1]);
+        }
+        if (!$request->has('best_rated')) {
+            $request->request->add(['best_rated' => 0]);
+        } else {
+            $request->request->add(['best_rated' => 1]);
+        }
+        if (!$request->has('trend_product')) {
+            $request->request->add(['trend_product' => 0]);
+        } else {
+            $request->request->add(['trend_product' => 1]);
+        }
+        if (!$request->has('slider_discount')) {
+            $request->request->add(['slider_discount' => 0]);
+        } else {
+            $request->request->add(['slider_discount' => 1]);
+        }
         $product = Products::findOrFail($id);
        $subCatId=$product->subCategory_id;
         if ($request->hasFile("photo")) {

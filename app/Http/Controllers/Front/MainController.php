@@ -24,15 +24,15 @@ class MainController extends Controller
     public function getHome()
     {
         $categories = Category::select('name','id')->get();
-        $products = Products::select('name', 'image', 'id', 'sale_price')->get();
-        return view('webSite.index', compact('categories', 'products'));
+        $newProducts = Products::orderBy('id','desc')->get();
+        return view('webSite.index', get_defined_vars());
     }
     public function getCat(Request $request)
     {
-        $categories = Category::select('name', 'id')->get();
-        $products = Products::select('name', 'id', 'image', 'sale_price')->where('stock', '>', 0)->when($request->search, function ($q) use ($request) {
+        $categories = Category::all();
+        $products = Products::where('stock', '>', 0)->when($request->search, function ($q) use ($request) {
             return $q->where('name', 'like', '%' . $request->search . '%');
-        })->latest()->paginate(3);
+        })->latest()->paginate(6);
 
         return view('webSite.categories', compact('categories', 'products'));
     }
@@ -40,7 +40,7 @@ class MainController extends Controller
     {
         $categories = Category::select('name', 'id')->get();
 
-        $products = Products::select('name', 'id', 'image', 'sale_price')->where('subCategory_id', $id)->where('stock', '>', 0)->paginate(3);
+        $products = Products::where('subCategory_id', $id)->where('stock', '>', 0)->paginate(8);
         return view('webSite.categories', compact('products', 'categories'));
     }
     public function getDetailsPage($id)

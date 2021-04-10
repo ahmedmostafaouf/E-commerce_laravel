@@ -19,11 +19,15 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('subCategory_id')->unsigned();
             $table->integer('category_id')->unsigned();
-
-            $table->string('image')->nullable()->default('default.png');
             $table->double('purchase_price','8','2');
             $table->double('sale_price','8','2');
+            $table->double('discount','8','2');
             $table->integer('stock');
+            $table->tinyInteger('status')->nullable()->default(0);
+            $table->tinyInteger('hot_new')->nullable()->default(0);
+            $table->tinyInteger('best_rated')->nullable()->default(0);
+            $table->tinyInteger('trend_product')->nullable()->default(0);
+            $table->tinyInteger('slider_discount')->nullable()->default(0);
             $table->timestamps();
             $table->foreign('subCategory_id')->references('id')->on('sub_categories')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

@@ -188,7 +188,50 @@
                             </div>
 
                         </div>
-
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="exampleInputEmail1">Status</label>
+                                    <input type="checkbox"  name="status"
+                                           placeholder="Status">
+                                    @error("status")
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="col-4">
+                                    <label for="exampleInputEmail1">Hot New</label>
+                                    <input type="checkbox"  name="hot_new"
+                                           placeholder="Hot New">
+                                    @error("hot_new")
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="col-4">
+                                    <label for="exampleInputEmail1">Best Rated</label>
+                                    <input type="checkbox"  name="best_rated"
+                                           placeholder="Best Rated">
+                                    @error("best_rated")
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="col-4">
+                                    <label for="exampleInputEmail1">Trend Products</label>
+                                    <input type="checkbox"  name="trend_product"
+                                           placeholder="Trend Products">
+                                    @error("trend_product")
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="col-4">
+                                    <label for="exampleInputEmail1">Slider Discount</label>
+                                    <input type="checkbox"  name="slider_discount"
+                                           placeholder="Slider Discount">
+                                    @error("slider_discount")
+                                    <span class="text-danger">{{$message}} </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-success">Add It !!</button>

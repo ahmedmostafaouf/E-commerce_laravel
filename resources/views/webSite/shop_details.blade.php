@@ -53,7 +53,8 @@
             <form method="POST" action="{{route('Add.carts',$products->id)}}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" value="{{$products->id}}" name="product_id">
-\Illuminate\Support\Facades\Session::get('session_id')                \Illuminate\Support\Facades\Session::get('session_id')
+                <input type="hidden" @if(empty( auth()->user())) value="" @else value="{{auth()->user()->id}}" @endif  name="user_id">
+                <input type="hidden" value="" name="session_id">
                 <input type="hidden" value="{{$products->name}}" name="product_name">
                 <input type="hidden" value="{{$products->stock}}" name="stock">
                 <input type="hidden" value="{{$products->sale_price}}" name="sale_price">
@@ -79,19 +80,56 @@
                     </div>
 
                     <div class="add-to-btn">
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_inline_share_toolbox"></div>
 
-                        <div class="share-bar">
-                            <a class="btn hvr-hover" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                            <a class="btn hvr-hover" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-                            <a class="btn hvr-hover" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                            <a class="btn hvr-hover" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-                            <a class="btn hvr-hover" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                        </div>
                     </div>
                 </div>
             </form>
             </div>
         </div>
+        <br>
+        <br>
+        <!-- Recently Viewed -->
+
+        <div class="viewed">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="viewed_title_container">
+                            <h3 class="viewed_title">Product Details</h3>
+                        </div>
+
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Product Details</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Product Review</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <br> <h4> {!! $products->description !!}</h4> </div>
+
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
+
+                                <div class="fb-comments" data-href="{{ Request::url() }}" data-width="" data-numposts="5"></div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
         <div class="row my-5">
             <div class="col-lg-12">
@@ -142,3 +180,10 @@
 </div>
 <!-- End Cart -->
 @endsection
+@section('js')
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=608445939755359&autoLogAppEvents=1" nonce="2XbK5PfB"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6072086b9507c34f"></script>
+
+@stop

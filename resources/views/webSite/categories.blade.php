@@ -65,7 +65,19 @@
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
-                                                            <p class="sale">Sale</p>
+                                                            @if($product->discount==0)
+                                                                <p class="sale">New</p>
+                                                            @else
+                                                                <p class="sale">
+                                                                    @php
+                                                                        $amount=$product->sale_price - $product->discount;
+                                                                        $discount=$amount/$product->sale_price*100;
+                                                                    @endphp
+                                                                    {{ intval($discount) }} %
+                                                                </p>
+                                                            @endif
+
+
                                                         </div>
                                                         @if($product->getMedia("photos")->first())
                                                             <img class="img-fluid" style="width: 300px; height:200px "
@@ -82,9 +94,16 @@
                                                             <a class="cart" href="{{route('details.page',$product->id)}}">Detail Page</a>
                                                         </div>
                                                     </div>
-                                                    <div class="why-text">
-                                                        <h4>Product Name : {{$product->name}}</h4>
-                                                        <h5> Price : $ {{$product->sale_price}}</h5>
+                                                    <div class="why-text text-center">
+                                                        <h4 > {{$product->name}}</h4>
+                                                        @if( $product->discount ==0)
+                                                            <h5 style="color: darkred">  $ {{$product->sale_price}}</h5>
+                                                        @else
+                                                            <del>$ {{$product->sale_price}}</del>
+                                                            <span style="color: darkred">   ${{$product->discount}} </span>
+
+
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>

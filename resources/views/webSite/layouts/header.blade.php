@@ -150,7 +150,14 @@
                     @foreach($carts->where('session_id',\Illuminate\Support\Facades\Session::get('session_id'))->get()  as $cart)
 
                         <li>
-                        <a href="#" class="photo"><img src="{{$cart->product->image}}" class="cart-thumb" alt="" /></a>
+                            @if($cart->product->getMedia("photos")->first())
+                                <a class="photo">
+                                <img class="cart-thumb"
+                                     src="{{$cart->product->getMedia("photos")->first()->getFullUrl()}}"
+                                     width="50" height="50"></a>
+                            @else
+                                not set yet !
+                            @endif
                         <h6><a href="#">{{$cart->product->name}} </a></h6>
                         <p>{{$cart->quantity}} Qe  -- <span class="price">${{$cart->product->sale_price}}</span></p>
                     </li>
