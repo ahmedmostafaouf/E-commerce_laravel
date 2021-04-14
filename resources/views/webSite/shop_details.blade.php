@@ -57,10 +57,10 @@
                 <input type="hidden" value="" name="session_id">
                 <input type="hidden" value="{{$products->name}}" name="product_name">
                 <input type="hidden" value="{{$products->stock}}" name="stock">
-                <input type="hidden" value="{{$products->sale_price}}" name="sale_price">
+                <input type="hidden" @if($products->discount == 0) value="{{$products->sale_price}}" @else value="{{$products->discount}}" @endif name="sale_price">
                 <div class="single-product-details">
-                    <h2>Product Name is : {{$products->name}}</h2>
-                    <h5> Product Price Is : $ {{$products->sale_price}} </h5>
+                    <h2>Product Name Is : {{$products->name}}</h2>
+                    <h5>  @if($products->discount==0)Product Price Is : $ {{$products->sale_price}} @else Product Discount Is :  $ {{$products->discount}}  <span style="color: black">____ Not : </span> <del>$ {{$products->sale_price}}</del>  @endif </h5>
                     <p class="available-stock"><span> More than {{$products->stock}} available</span>
                     <p>
                     <h4>Short Description:</h4>

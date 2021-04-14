@@ -17,6 +17,8 @@ class SettingSeeder extends Seeder
             'desc'=>'See how your users experience your website in realtime or view trends to see any changes in performance over time.',
             'email'     =>'limatrix@example.com',
             'phone'  =>'01066273085',
+            'vat'=>'5',
+            'shipping'=>'10',
             'fac_url'     =>"https://www.facebook.com",
             'tw_url'     =>"https://www.facebook.com",
             'ln_url'     =>"https://www.facebook.com",

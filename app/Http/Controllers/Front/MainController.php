@@ -67,13 +67,19 @@ class MainController extends Controller
                 'session_id'=>$session_id
             ]);
             $product->update(['stock' => $product->stock - $request->quantity]);
-            return redirect()->route('cart.show');
+            return redirect()->route('cart.show')->with(['success'=>'Add Successfully']);
         }
     }
     public function editCart($id)
     {
         $carts = Cart::with('product')->findOrFail($id);
         return view('webSite.edit_cart', compact('carts'));
+    }
+    public function remove_cart($id)
+    {
+        $carts = Cart::with('product')->findOrFail($id);
+       $carts->delete();
+       return redirect()->back()->with(['success'=>"Remove Successfully"]);
     }
     public function UpdateCart(Request $request, $id)
     {
@@ -100,7 +106,7 @@ class MainController extends Controller
                     'stock' => $products->stock - $minus
                 ]);
             }
-            return redirect()->route('cart.show');
+            return redirect()->route('cart.show')->with(['success'=>'Remove Success']);
         }
     }
 
@@ -226,10 +232,10 @@ class MainController extends Controller
                 'phone'=>$data['shipping_mobile'],
             ]);
         }
-        return redirect()->route('get.review');
+        return redirect()->route('get.review')->with(['success'=>'Add Success']);
     }
     public function getOrderReview(){
-        $carts=Cart::where('user_id',auth()->user()->id)->get();
+        $carts=Cart::where('session_id',Session::get('session_id'))->get();
         $delivaryAddress=Delivary::where('user_id',auth()->user()->id)->first();
       return view('webSite.order_review',get_defined_vars());
     }
@@ -241,7 +247,17 @@ class MainController extends Controller
                 'total_price'=>$request->total
             ]);
             $orders->products()->attach($request->products);
-            DB::table('carts')->where('user_id',auth()->user()->id)->delete();
+            if(Session::has('session_id'))
+            {
+                DB::table('carts')->where('session_id',Session::get('session_id'))->delete();
+                Session::forget('coupon');
+
+            }else{
+                DB::table('carts')->where('user_id',auth()->user()->id)->delete();
+                Session::forget('coupon');
+
+
+            }
             return redirect()->route('get.thanks')->with(['success'=>'success']);
 
         }else{
@@ -277,7 +293,14 @@ class MainController extends Controller
             'bank_transaction_id'=>$request->id_payment
         ]);
         $orders->products()->attach($request->products);
-        DB::table('carts')->where('user_id',auth()->user()->id)->delete();
+        if(Session::has('session_id'))
+        {
+            DB::table('carts')->where('session_id',Session::get('session_id'))->delete();
+            Session::forget('coupon');
+        }else{
+            DB::table('carts')->where('user_id',auth()->user()->id)->delete();
+            Session::forget('coupon');
+        }
         return redirect()->route('get.thanks')->with(['success'=>'success add']);
     }
 

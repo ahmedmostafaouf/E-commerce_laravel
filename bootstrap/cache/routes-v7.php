@@ -84,7 +84,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::guh49oM4jVVQOiVn',
+            '_route' => 'generated::Guk0P5yILg195Jm6',
           ),
           1 => NULL,
           2 => 
@@ -104,6 +104,22 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
+            '_route' => 'logout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
             '_route' => 'user-logout',
           ),
           1 => NULL,
@@ -111,6 +127,136 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/password/reset' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.request',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.update',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/password/email' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.email',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/password/confirm' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'password.confirm',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::2Ou3KvXAkY81zWPu',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/email/verify' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'verification.notice',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/email/resend' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'verification.resend',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -144,7 +290,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'get.front.login',
+            '_route' => 'login',
           ),
           1 => NULL,
           2 => 
@@ -1113,10 +1259,105 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/coupons/coupon' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'coupon.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'coupon.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/coupons/coupon/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'coupon.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/coupons/apply/coupon' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'apply.coupon',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/coupons/remove' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'delete.coupon',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/_debugbar/(?|c(?|lockwork/([^/]++)(*:42)|ache/([^/]++)(?:/([^/]++))?(*:76))|telescope/([^/]++)(*:102))|/categories/([^/]++)(*:131)|/de(?|tailsPage/([^/]++)(*:163)|leteWishlist/([^/]++)(*:192))|/ad(?|dCart/([^/]++)(*:221)|min/(?|category/(?|edit/([^/]++)(*:261)|updated/([^/]++)(*:285)|delete/([^/]++)(*:308))|subcategory/(?|create(?|/([^/]++)(*:350)|d/([^/]++)(*:368))|show/([^/]++)(*:390)|edit/([^/]++)(*:411)|update/([^/]++)(*:434)|delete/([^/]++)(*:457))|products/(?|create(?|/([^/]++)(*:496)|d/([^/]++)(*:514))|show/([^/]++)(*:536)|edit/([^/]++)(*:557)|updated/([^/]++)(*:581)|delete/([^/]++)(*:604))|users/(?|delete/([^/]++)(*:637)|change/([^/]++)(*:660))|orders/view/order/(?|([^/]++)(*:698)|payment/(?|accept/([^/]++)(*:732)|cancel/([^/]++)(*:755))|delivery/(?|process/([^/]++)(*:792)|success/([^/]++)(*:816)))))|/editcart/([^/]++)(*:846)|/updateCart/([^/]++)(*:874)|/toggle\\-favourite/([^/]++)(*:909)|/orders/([^/]++)(*:933))/?$}sDu',
+      0 => '{^(?|/_debugbar/(?|c(?|lockwork/([^/]++)(*:42)|ache/([^/]++)(?:/([^/]++))?(*:76))|telescope/([^/]++)(*:102))|/password/reset/([^/]++)(*:135)|/e(?|mail/verify/([^/]++)/([^/]++)(*:177)|ditcart/([^/]++)(*:201))|/categories/([^/]++)(*:230)|/de(?|tailsPage/([^/]++)(*:262)|leteWishlist/([^/]++)(*:291))|/ad(?|dCart/([^/]++)(*:320)|min/(?|c(?|ategory/(?|edit/([^/]++)(*:363)|updated/([^/]++)(*:387)|delete/([^/]++)(*:410))|oupons/coupon/([^/]++)(?|(*:444)|/edit(*:457)|(*:465)))|subcategory/(?|create(?|/([^/]++)(*:508)|d/([^/]++)(*:526))|show/([^/]++)(*:548)|edit/([^/]++)(*:569)|update/([^/]++)(*:592)|delete/([^/]++)(*:615))|products/(?|create(?|/([^/]++)(*:654)|d/([^/]++)(*:672))|show/([^/]++)(*:694)|edit/([^/]++)(*:715)|updated/([^/]++)(*:739)|delete/([^/]++)(*:762))|users/(?|delete/([^/]++)(*:795)|change/([^/]++)(*:818))|orders/view/order/(?|([^/]++)(*:856)|payment/(?|accept/([^/]++)(*:890)|cancel/([^/]++)(*:913))|delivery/(?|process/([^/]++)(*:950)|success/([^/]++)(*:974)))))|/remove/([^/]++)(*:1002)|/updateCart/([^/]++)(*:1031)|/toggle\\-favourite/([^/]++)(*:1067)|/orders/([^/]++)(*:1092))/?$}sDu',
     ),
     3 => 
     array (
@@ -1190,17 +1431,17 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      131 => 
+      135 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'get.cat.id',
+            '_route' => 'password.reset',
           ),
           1 => 
           array (
-            0 => 'id',
+            0 => 'token',
           ),
           2 => 
           array (
@@ -1213,17 +1454,18 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      163 => 
+      177 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'details.page',
+            '_route' => 'verification.verify',
           ),
           1 => 
           array (
             0 => 'id',
+            1 => 'hash',
           ),
           2 => 
           array (
@@ -1236,553 +1478,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      192 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'delete.wishlist',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      221 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'Add.carts',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      261 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'category-edit',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      285 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'category-update',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      308 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'category-delete',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      350 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'sub-category-create',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      368 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'sub-category-save',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      390 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'sub-category-show',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      411 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'sub-category-edit',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      434 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'sub-category-update',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      457 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'sub-category-delete',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      496 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product-create',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      514 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product-save',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      536 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product-show',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      557 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product-edit',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      581 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product-update',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      604 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product-delete',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      637 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'users.delete',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      660 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'users.status',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      698 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'order.view',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      732 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'order.payment.accept',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      755 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'order.payment.cancel',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      792 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'order.delivery.process',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      816 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'order.delivery.success',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      846 => 
+      201 => 
       array (
         0 => 
         array (
@@ -1805,7 +1501,710 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      874 => 
+      230 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'get.cat.id',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      262 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'details.page',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      291 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'delete.wishlist',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      320 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'Add.carts',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      363 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'category-edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      387 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'category-update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      410 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'category-delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      444 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'coupon.show',
+          ),
+          1 => 
+          array (
+            0 => 'coupon',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      457 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'coupon.edit',
+          ),
+          1 => 
+          array (
+            0 => 'coupon',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      465 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'coupon.update',
+          ),
+          1 => 
+          array (
+            0 => 'coupon',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'coupon.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'coupon',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      508 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sub-category-create',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      526 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sub-category-save',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      548 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sub-category-show',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      569 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sub-category-edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      592 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sub-category-update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      615 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sub-category-delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      654 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product-create',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      672 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product-save',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      694 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product-show',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      715 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product-edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      739 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product-update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      762 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product-delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      795 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      818 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.status',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      856 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.view',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      890 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.payment.accept',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      913 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.payment.cancel',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      950 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.delivery.process',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      974 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'order.delivery.success',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      1002 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'cart.remove',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      1031 => 
       array (
         0 => 
         array (
@@ -1827,7 +2226,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      909 => 
+      1067 => 
       array (
         0 => 
         array (
@@ -1850,7 +2249,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      933 => 
+      1092 => 
       array (
         0 => 
         array (
@@ -2109,7 +2508,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::guh49oM4jVVQOiVn' => 
+    'generated::Guk0P5yILg195Jm6' => 
     array (
       'methods' => 
       array (
@@ -2124,15 +2523,370 @@ app('router')->setCompiledRoutes(
           0 => 'api',
           1 => 'auth:api',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":289:{@HpXMUPGsQJRsIP+AVgLaEKTB9Wmb0/M9+2vQmV17NyM=.a:5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":289:{@qsT3Xx1ql6efnIAuBqr+6w7gzcSVjGJB59BDj3R378c=.a:5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000011f18fb0000000000d1da7fa";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000004fb19c3a000000001bed6309";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::guh49oM4jVVQOiVn',
+        'as' => 'generated::Guk0P5yILg195Jm6',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'logout' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'logout',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@logout',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@logout',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'logout',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'password.request' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'password/reset',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\ForgotPasswordController@showLinkRequestForm',
+        'controller' => 'App\\Http\\Controllers\\Auth\\ForgotPasswordController@showLinkRequestForm',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'password.request',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'password.email' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'password/email',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\ForgotPasswordController@sendResetLinkEmail',
+        'controller' => 'App\\Http\\Controllers\\Auth\\ForgotPasswordController@sendResetLinkEmail',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'password.email',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'password.reset' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'password/reset/{token}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\ResetPasswordController@showResetForm',
+        'controller' => 'App\\Http\\Controllers\\Auth\\ResetPasswordController@showResetForm',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'password.reset',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'password.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'password/reset',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\ResetPasswordController@reset',
+        'controller' => 'App\\Http\\Controllers\\Auth\\ResetPasswordController@reset',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'password.update',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'password.confirm' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'password/confirm',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\ConfirmPasswordController@showConfirmForm',
+        'controller' => 'App\\Http\\Controllers\\Auth\\ConfirmPasswordController@showConfirmForm',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'password.confirm',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'generated::2Ou3KvXAkY81zWPu' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'password/confirm',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\ConfirmPasswordController@confirm',
+        'controller' => 'App\\Http\\Controllers\\Auth\\ConfirmPasswordController@confirm',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::2Ou3KvXAkY81zWPu',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'verification.notice' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'email/verify',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\VerificationController@show',
+        'controller' => 'App\\Http\\Controllers\\Auth\\VerificationController@show',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'verification.notice',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'verification.verify' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'email/verify/{id}/{hash}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\VerificationController@verify',
+        'controller' => 'App\\Http\\Controllers\\Auth\\VerificationController@verify',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'verification.verify',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'verification.resend' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'email/resend',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\VerificationController@resend',
+        'controller' => 'App\\Http\\Controllers\\Auth\\VerificationController@resend',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'verification.resend',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2161,10 +2915,10 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":325:{@PCVRW61PeU4gKNN9+UGfVcJiQu6nLOP91Z7iIv+3LA4=.a:5:{s:3:"use";a:0:{}s:8:"function";s:112:"function (){
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":315:{@cFDj7TseeTuK9EBEF0uk54nwSWSbJ3UyQv/06i7H2us=.a:5:{s:3:"use";a:0:{}s:8:"function";s:102:"function (){
     \\Illuminate\\Support\\Facades\\Auth::logout();
-    return \\redirect()->route(\'get.front.login\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000011f18fb2000000000d1da7fa";}}',
+    return \\redirect()->route(\'login\');
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000004fb19c38000000001bed6309";}}',
         'namespace' => NULL,
         'prefix' => NULL,
         'where' => 
@@ -2221,7 +2975,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'get.front.login' => 
+    'login' => 
     array (
       'methods' => 
       array (
@@ -2242,7 +2996,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'get.front.login',
+        'as' => 'login',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2578,6 +3332,42 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
+    'cart.remove' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'remove/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Front\\MainController@remove_cart',
+        'controller' => 'App\\Http\\Controllers\\Front\\MainController@remove_cart',
+        'namespace' => 'App\\Http\\Controllers\\Front',
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'cart.remove',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
     'update.cart' => 
     array (
       'methods' => 
@@ -2663,6 +3453,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
           1 => 'auth:web',
+          2 => 'verified',
         ),
         'uses' => 'App\\Http\\Controllers\\Front\\MainController@getAccount',
         'controller' => 'App\\Http\\Controllers\\Front\\MainController@getAccount',
@@ -3359,10 +4150,10 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":302:{@wf7q+zyis8djMxJAfXkySaBmiyoxxsinuklwCnXtnKM=.a:5:{s:3:"use";a:0:{}s:8:"function";s:90:"function (){
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":302:{@wjewSfaNxL9/miahJUgqvXc/muRuZGtEM0T/IoMi8Ws=.a:5:{s:3:"use";a:0:{}s:8:"function";s:90:"function (){
   \\auth(\'admin\')->logout();
     return \\redirect()->route(\'getAdminLogin\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000011f1805f000000000d1da7fa";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000004fb193ca000000001bed6309";}}',
         'namespace' => NULL,
         'prefix' => 'admin',
         'where' => 
@@ -5132,6 +5923,336 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'search.day',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'coupon.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/coupons/coupon',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'as' => 'coupon.index',
+        'uses' => 'App\\Http\\Controllers\\CouponController@index',
+        'controller' => 'App\\Http\\Controllers\\CouponController@index',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'coupon.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/coupons/coupon/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'as' => 'coupon.create',
+        'uses' => 'App\\Http\\Controllers\\CouponController@create',
+        'controller' => 'App\\Http\\Controllers\\CouponController@create',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'coupon.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/coupons/coupon',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'as' => 'coupon.store',
+        'uses' => 'App\\Http\\Controllers\\CouponController@store',
+        'controller' => 'App\\Http\\Controllers\\CouponController@store',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'coupon.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/coupons/coupon/{coupon}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'as' => 'coupon.show',
+        'uses' => 'App\\Http\\Controllers\\CouponController@show',
+        'controller' => 'App\\Http\\Controllers\\CouponController@show',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'coupon.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/coupons/coupon/{coupon}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'as' => 'coupon.edit',
+        'uses' => 'App\\Http\\Controllers\\CouponController@edit',
+        'controller' => 'App\\Http\\Controllers\\CouponController@edit',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'coupon.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/coupons/coupon/{coupon}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'as' => 'coupon.update',
+        'uses' => 'App\\Http\\Controllers\\CouponController@update',
+        'controller' => 'App\\Http\\Controllers\\CouponController@update',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'coupon.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/coupons/coupon/{coupon}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'as' => 'coupon.destroy',
+        'uses' => 'App\\Http\\Controllers\\CouponController@destroy',
+        'controller' => 'App\\Http\\Controllers\\CouponController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons/',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'apply.coupon' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/coupons/apply/coupon',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CouponController@apply_coupon',
+        'controller' => 'App\\Http\\Controllers\\CouponController@apply_coupon',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons',
+        'where' => 
+        array (
+        ),
+        'as' => 'apply.coupon',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'delete.coupon' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/coupons/remove',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CouponController@remove_coupon',
+        'controller' => 'App\\Http\\Controllers\\CouponController@remove_coupon',
+        'namespace' => NULL,
+        'prefix' => 'admin/coupons',
+        'where' => 
+        array (
+        ),
+        'as' => 'delete.coupon',
       ),
       'fallback' => false,
       'defaults' => 

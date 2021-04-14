@@ -12,6 +12,7 @@
                             <th>Ordered Product </th>
                             <th>Payment Method</th>
                             <th>Grand Total</th>
+                            <th>Code status</th>
                             <th>Order Date</th>
                             <th>Action</th>
                         </tr>
@@ -31,6 +32,7 @@
                                 </td>
                                 <td>@if($order->bank_transaction_id) Use Master Card @else Cash on Delivary @endif </td>
                                 <td>{{$order->total_price}}</td>
+                                <td>{{$order->status_code}}</td>
                                 <td>{{$order->created_at}}</td>
                                 <td>View Detail</td>
 

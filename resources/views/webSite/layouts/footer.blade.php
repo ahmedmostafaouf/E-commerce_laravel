@@ -113,7 +113,7 @@
                             <li><a href="{{route('get.services')}}">Customer Service</a></li>
                             <li><a href="{{route('get.cat')}}">Categories</a></li>
                             <li><a href="{{route('get.contact')}}">Contact Us</a></li>
-                            <li><a href="{{route('get.front.login')}}">Shop</a></li>
+                            <li><a href="{{route('login')}}">Shop</a></li>
                         </ul>
                     </div>
                 </div>

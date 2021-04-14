@@ -20,6 +20,9 @@ class CreateSettingsTable extends Migration
             $table->string('address');
             $table->string('email');
             $table->string('phone');
+            $table->string('shipping')->nullable();
+            $table->string('vat')->nullable();
+            $table->string('phone');
             $table->string('fac_url')->nullable();
             $table->string('whats_url')->nullable();
             $table->string('youtube_url')->nullable();

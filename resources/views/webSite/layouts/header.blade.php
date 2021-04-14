@@ -46,7 +46,7 @@
                 <div class="our-link">
                     <ul>
                         @if(empty(Auth::check()))
-                        <li><a href="{{route('get.front.login')}}">Login</a></li>
+                        <li><a href="{{route('login')}}">Login</a></li>
                         @else
                             <li><a href="" data-toggle="modal" data-target="#exampleModal"> My Order Tracking</a></li>
                             <li><a href="{{route('get.account')}}"><i class="fa fa-user"></i> Account</a></li>

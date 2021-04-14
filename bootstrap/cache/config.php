@@ -592,11 +592,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mailhog',
-        'port' => '1025',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'smtp.mailtrap.io',
+        'port' => '465',
+        'encryption' => 'tls',
+        'username' => '7f0fc78c03682b',
+        'password' => '1b3f7af27365e3',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -629,7 +629,7 @@
     ),
     'from' => 
     array (
-      'address' => NULL,
+      'address' => 'A7med.mostafa9900@gmail.com',
       'name' => 'FURSHOP',
     ),
     'markdown' => 

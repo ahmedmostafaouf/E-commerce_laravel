@@ -2227,8 +2227,7 @@
 }
  .help-block.with-errors{
      position: absolute;
-     right: 0;
-     background: red;
+     background: #d75c5c;
      color: #fff;
      padding: 0px 15px;
 }

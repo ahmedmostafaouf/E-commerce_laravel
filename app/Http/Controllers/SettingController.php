@@ -16,6 +16,6 @@ class SettingController extends Controller
         $settings=Setting::first();
         $settings->update($request->all());
 
-     return redirect()->route('setting.create')->with(['success'=>"تم التعديل بنجاح"]);
+     return redirect()->route('setting.create')->with(['success'=>"Edit Successfully"]);
     }
 }

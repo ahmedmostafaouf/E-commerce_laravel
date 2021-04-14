@@ -14,6 +14,8 @@ class Setting extends Model
         'address',
         'email',
         'phone',
+        'vat',
+        'shipping',
         'fac_url',
         'whats_url',
         'youtube_url',

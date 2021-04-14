@@ -46,7 +46,7 @@
                                     {{$or->product->name}}
                                 </td>
                                 <td class="price-pr">
-                                    <p> $ {{$or->product->sale_price}} </p>
+                                    <p>  @if($or->product->discount==0) $ {{$or->product->sale_price}} @else <del>$ {{$or->product->sale_price}}</del> $ {{$or->product->discount}}@endif </p>
                                 </td>
                                 <td class="quantity-box">
 
@@ -54,10 +54,10 @@
 
                                 </td>
                                 <td class="total-pr">
-                                    <p> $ {{$or->quantity * $or->product->sale_price}} </p>
+                                    <p> @if($or->product->discount==0) $ {{$or->quantity * $or->product->sale_price}} @else $ {{$or->quantity * $or->product->discount}} @endif </p>
                                 </td>
                                 <td class="remove-pr">
-                                    <a href="">
+                                    <a href="{{route('cart.remove',$or->id)}}">
                                         <i class="fas fa-times"></i>
                                     </a>
                                 </td>
@@ -67,7 +67,13 @@
                                         class="fas fa-edit"></i></a>
                                 </td>
                             </tr>
-                        <?php $total_mount = $total_mount + ($or->product->sale_price*$or->quantity);
+                        <?php
+                            if($or->product->discount==0){
+                                $total_mount = $total_mount + ($or->product->sale_price*$or->quantity);
+                            }else{
+                                $total_mount = $total_mount + ($or->product->discount*$or->quantity);
+                            }
+
                               $quantity= $quantity + $or->quantity;
                         ?>
 
@@ -85,16 +91,78 @@
 
 
     <div class="row my-5">
-        <div class="col-lg-12 col-sm-12">
+        @if(Session::has('coupon'))
+            <div class="col-lg-6 col-sm-6">
+            </div>
+            @else
+            <div class="col-lg-6 col-sm-6">
+                <div class="coupon-box">
+                    <form method="post" action="{{route('apply.coupon')}}">
+                        <div class="input-group input-group-sm">
+
+                            @csrf
+                            <input type="hidden" name="total" value="{{$total_mount}}">
+                            <input class="form-control" placeholder="Enter your coupon code" name="coupon" aria-label="Coupon code" type="text">
+                            <div class="input-group-append">
+                                <button class="btn btn-theme" type="submit">Apply Coupon</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            @endif
+
+
+        <div class="col-lg-6 col-sm-6">
             <div class="update-box">
                 <div class="col-12 d-flex shopping-box"><a href="{{route('get.cat')}}" class="ml-auto btn hvr-hover">Update Card</a>
                 </div>
             </div>
         </div>
         <br>
+        <br>
+        <br>
         <div class="col-lg-12 col-sm-6">
             <div class="order-box">
                 <h3 class="text-center ">Order summary</h3>
+                <hr>
+                @if(Session::has('coupon'))
+                <div class="d-flex gr-total">
+                    <h5>Sub Total</h5>
+                    <div class="ml-auto h5">
+                           <p> $ {{Session::get('coupon')['balance']}} </p>
+                    </div>
+                </div>
+                    <hr>
+                    <div class="d-flex gr-total">
+                        <h5>Coupon : ({{Session::get('coupon')['name']}}) <a href="{{route('delete.coupon')}}" class="btn btn-danger btn-sm" style="color: white">X </a></h5>
+                        <div class="ml-auto h5">
+                            <p> $ {{Session::get('coupon')['discount']}} </p>
+                        </div>
+                    </div>
+                @else
+                    <div class="d-flex gr-total">
+                    <h5>Sub Total</h5>
+                        <div class="ml-auto h5">
+                        <p> $ {{$total_mount}} </p>
+                        </div>
+                        @endif
+                    </div>
+                    <hr>
+                    <div class="d-flex gr-total">
+                        <h5>Shipping</h5>
+                        <div class="ml-auto h5">
+                            <p> $ {{$settings->shipping}} </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex gr-total">
+                        <h5>Vat</h5>
+                        <div class="ml-auto h5">
+                            <p> $ {{$settings->vat}} </p>
+                        </div>
+                    </div>
                     <hr>
                     <div class="d-flex gr-total">
                         <h5>Quantity</h5>
@@ -104,19 +172,36 @@
 
                     <div class="d-flex gr-total">
                         <h5>Total</h5>
-                        <div class="ml-auto h5"> $ {{number_format($total_mount,2,",",".")}}   </div>
+                        @php
+
+                            $shipping=$settings->shipping;
+                            $vat=$settings->vat;
+
+                        @endphp
+                        @if(Session::has('coupon'))
+                            @php
+                              $discount=Session::get('coupon')['balance'];
+                              @endphp
+
+                            <div class="ml-auto h5"> $ {{number_format($discount+$shipping+$vat,2,",",".")}}   </div>
+
+                        @else
+                            <div class="ml-auto h5"> $ {{number_format($total_mount + $shipping+$vat,2,",",".")}} <hr>  </div>
+                        @endif
+
                     </div>
             </div>
-            <hr class="my-1">
-            <br>
+        </div>
 
+        <hr class="my-1">
+            <br>
             <div class="col-12 d-flex shopping-box"><a href="{{ route('get.checkout') }}" class="ml-auto btn hvr-hover">CheckOut</a>
             </div>
         </div>
     </div>
 
     </div>
-</div>
+
 <!-- End Cart -->
 
 

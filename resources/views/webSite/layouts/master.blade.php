@@ -37,6 +37,8 @@
 </head>
 <body>
 @include('webSite.layouts.header')
+@include('webSite.layouts.alerts.errors')
+@include('webSite.layouts.alerts.success')
 @yield('content')
 @include('webSite.layouts.footer')
 <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>

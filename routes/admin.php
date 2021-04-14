@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingController;
@@ -118,3 +119,10 @@ Route::group(['prefix'=>'reports','middleware'=>'auth:admin'],function () {
 });
 
 ///////////////////////////////////Coupon & newsletter////////////////////////////////
+
+Route::group(['prefix'=>'coupons','middleware'=>'auth:admin'],function () {
+    Route::resource('/coupon',CouponController::class);
+    Route::post('apply/coupon',[CouponController::class,'apply_coupon'])->name('apply.coupon');
+    Route::get('/remove',[CouponController::class,'remove_coupon'])->name('delete.coupon');
+
+});

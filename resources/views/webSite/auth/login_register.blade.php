@@ -1,60 +1,56 @@
 @extends('webSite.layouts.master')
 @section('content')
     <div class="contact-box-main">
-
         <div class="container">
-            @if(Session::has('success'))
-                <div class="alert alert-sucess alert-block">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>{{ session('success') }}</strong>
-                </div>
-            @endif
-            @if($errors->any())
-                <div class="alert alert-danger alert-block">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                    </ul>
-
-                </div>
-            @endif
             <div class="row">
                 <div class="col-lg-5 col-sm-12">
                     <div class="contact-form-right">
                         <h2>New User SignUp !</h2>
-                        <form action="{{route('front.register')}}" method="POST" id="contactForm registerForm"> {{csrf_field()}}
+                        <form action="{{route('front.register')}}" method="POST" id="contactForm registerForm">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name" id="name" name="name" required data-error="Please Enter Your Name">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="text" class="form-control  @error('name') is-invalid @enderror" placeholder="Your Name" id="name" name="name"  data-error="Please Enter Your Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        @error("name")
+                                        <div class="text-center">
+                                            <div class="help-block with-errors" style="Right:204px">{{$message}} </div>
+                                        </div>
+                                        @enderror
+
                                     </div>
 
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Email" id="email" name="email" required data-error="Please Enter Your Email">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Your Email" id="email" name="email" value="{{ old('name') }}" required autocomplete="name" autofocus  data-error="Please Enter Your Email">
+                                        @error("email")
+                                        <div class="text-center">
+                                            <div class="help-block with-errors" style="Right:204px">{{$message}} </div>
+                                        </div>
+                                        @enderror
                                     </div>
 
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" id="password" name="password" required data-error="Please Enter Your Password">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" id="password" name="password"  required data-error="Please Enter Your Password">
+                                        @error("password")
+                                        <div class="text-center">
+                                            <div class="help-block with-errors" style="Right:204px">{{$message}} </div>
+                                        </div>
+                                        @enderror
                                     </div>
 
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Password Again" id="password" name="password_confirmation" required data-error="Please Enter Your Password Again">
-                                        <div class="help-block with-errors"></div>
+                                        @error("password")
+                                        <div class="text-center">
+                                            <div class="help-block with-errors" style="Right:204px">{{$message}} </div>
+                                        </div>
+                                        @enderror
                                     </div>
 
                                 </div>
@@ -71,8 +67,8 @@
                     </div>
 
                 </div>
-                <div class="col-lg-1 col-sm-12" id="or">
-                    OR
+                <div class="col-lg-1 col-md-4 col-sm-2" id="or">
+                   <p  style="background: #d33b33;color: wheat;text-align: center;border-radius: 11px;font-weight: bold;">OR</p>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <div class="contact-form-right">
@@ -82,14 +78,24 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Your Email" id="email" name="email" required data-error="Please Enter Your Email">
-                                        <div class="help-block with-errors"></div>
+                                        @error("email")
+                                        <div class="text-center">
+                                            <div class="help-block with-errors" style="Right:204px">{{$message}} </div>
+                                        </div>
+                                        @enderror
                                     </div>
 
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Password" id="password" name="password" required data-error="Please Enter Your Password">
-                                        <div class="help-block with-errors"></div>
+
+                                        <a href="{{route('password.request')}}" style="margin-top:2px;"> I Forget My Password ! </a>
+                                        @error("password")
+                                        <div class="text-center">
+                                            <div class="help-block with-errors" style="Right:204px">{{$message}} </div>
+                                        </div>
+                                        @enderror
                                     </div>
 
                                 </div>

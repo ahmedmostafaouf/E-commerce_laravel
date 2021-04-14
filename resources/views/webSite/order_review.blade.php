@@ -144,7 +144,9 @@
                                     </td>
 
                                 </tr>
-                                <?php $total_mount = $total_mount + ($cart->product->sale_price*$cart->quantity);
+                                <?php
+
+                                $total_mount = $total_mount + ($cart->product->sale_price*$cart->quantity);
                                 $quantity= $quantity + $cart->quantity;
                                 $product_id=$cart->product->id
                                 ?>
@@ -160,23 +162,87 @@
                 <div class="order-box">
                     <h3 class="text-center ">Order summary</h3>
                     <hr>
-                    <div class="d-flex gr-total">
-                        <h5>Quantity</h5>
-                        <div class="ml-auto h5">  {{$quantity}} Qe </div>
-                    </div>
-                    <hr>
+                    @if(Session::has('coupon'))
+                        <div class="d-flex gr-total">
+                            <h5>Sub Total</h5>
+                            <div class="ml-auto h5">
+                                <p> $ {{Session::get('coupon')['balance']}} </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex gr-total">
+                            <h5>Coupon : ({{Session::get('coupon')['name']}}) <a href="{{route('delete.coupon')}}" class="btn btn-danger btn-sm" style="color: white">X </a></h5>
+                            <div class="ml-auto h5">
+                                <p> $ {{Session::get('coupon')['discount']}} </p>
+                            </div>
+                        </div>
+                    @else
+                        <div class="d-flex gr-total">
+                            <h5>Sub Total</h5>
+                            <div class="ml-auto h5">
+                                <p> $ {{$total_mount}} </p>
+                            </div>
+                            @endif
+                        </div>
+                        <hr>
+                        <div class="d-flex gr-total">
+                            <h5>Shipping</h5>
+                            <div class="ml-auto h5">
+                                <p> $ {{$settings->shipping}} </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex gr-total">
+                            <h5>Vat</h5>
+                            <div class="ml-auto h5">
+                                <p> $ {{$settings->vat}} </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex gr-total">
+                            <h5>Quantity</h5>
+                            <div class="ml-auto h5">  {{$quantity}} Qe </div>
+                        </div>
+                        <hr>
 
-                    <div class="d-flex gr-total">
-                        <h5>Total</h5>
-                        <div class="ml-auto h5"> $ {{number_format($total_mount,2,",",".")}}   </div>
-                    </div>
+                        <div class="d-flex gr-total">
+                            <h5>Total</h5>
+                            @php
+
+                                $shipping=$settings->shipping;
+                                $vat=$settings->vat;
+
+                            @endphp
+                            @if(Session::has('coupon'))
+                                @php
+                                    $discount=Session::get('coupon')['balance'];
+                                @endphp
+
+                                <div class="ml-auto h5"> $ {{number_format($discount+$shipping+$vat,2,",",".")}}   </div>
+
+                            @else
+                                <div class="ml-auto h5"> $ {{number_format($total_mount + $shipping+$vat,2,",",".")}} <hr>  </div>
+                            @endif
+
+                        </div>
                 </div>
                 <hr class="my-1">
                 <br>
 
             <form name="paymentForm" id="paymentForm" action="{{route('place.order')}}" method="post">
                 @csrf
-                <input type="hidden" value="{{$total_mount}}" name="total">
+                @if(Session::has('coupon'))
+                    @php
+                        $discounts=Session::get('coupon')['balance'];
+
+                    @endphp
+                    <input type="hidden" value="{{$discounts+$shipping+$vat}}" name="total">
+
+                @else
+                    <input type="hidden" value="{{$total_mount+$shipping+$vat}}" name="total">
+
+                @endif
+
                 @foreach($carts as $id => $cart)
                     <input type="hidden" value="{{$cart['quantity']}}" name="products[{{$cart->product_id}}][quantity]">
                 @endforeach

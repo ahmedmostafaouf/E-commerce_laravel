@@ -18,15 +18,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Auth::routes(['verify'=>'true','register'=>false,'login'=>false]);
+
 Route::get('logout' ,function (){
     Auth::logout();
-    return redirect()->route('get.front.login');
+    return redirect()->route('login');
 } )->name('user-logout');
 
 Route::get('/',[MainController::class,'getHome'])->name('get.home');
 
+
 Route::group(['namespace'=>'App\Http\Controllers\Front'],function (){
-    Route::get('login','LoginController@getUserLogin_register')->name('get.front.login');
+    Route::get('login','LoginController@getUserLogin_register')->name('login');
     Route::post('logins','LoginController@Login')->name('front.login');
     Route::post('register','LoginController@register')->name('front.register');
     Route::get('services','MainController@getServices')->name('get.services');
@@ -41,6 +44,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Front'],function (){
     Route::post('addCart/{id}','MainController@AddCart')->name('Add.carts');
 
     Route::get('editcart/{id}','MainController@editCart')->name('edit.cart');
+    Route::get('remove/{id}','MainController@remove_cart')->name('cart.remove');
 
     Route::post('updateCart/{id}','MainController@UpdateCart')->name('update.cart');
 
@@ -53,13 +57,10 @@ Route::group(['namespace'=>'App\Http\Controllers\Front'],function (){
 
 Route::group(['namespace'=>'App\Http\Controllers\Front','middleware'=>'auth:web'],function (){
 
-
-
-
     //Route::get('delete/{id}','MainController@deleteOrder')->name('delete.order');
    // Route::get('edit/{id}','MainController@editOrder')->name('edit.order');
     //Route::post('update/{id}','MainController@UpdateOrder')->name('update.order');
-    Route::get('myAccount','MainController@getAccount')->name('get.account');
+    Route::get('myAccount','MainController@getAccount')->name('get.account')->middleware('verified');
     Route::get('changPass','MainController@getChangePass')->name('get.change.pass');
     Route::post('updatePass','MainController@EditPassword')->name('update.password');
     Route::get('toggle-favourite/{product_id}' , 'MainController@toggleFavourite')->name('toggle-favourite');
